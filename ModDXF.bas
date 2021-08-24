@@ -80,3 +80,33 @@ Sub OutputDXFLine(InputArray2D, FilePath$)
     Call OutputText(TmpFilePath, TmpFileName, Output)
 
 End Sub
+
+Private Sub CheckArray2D(InputArray, Optional HairetuName$ = "配列")
+'入力配列が2次元配列かどうかチェックする
+'20210804
+
+    Dim Dummy2%, Dummy3%
+    On Error Resume Next
+    Dummy2 = UBound(InputArray, 2)
+    Dummy3 = UBound(InputArray, 3)
+    On Error GoTo 0
+    If Dummy2 = 0 Or Dummy3 <> 0 Then
+        MsgBox (HairetuName & "は2次元配列を入力してください")
+        Stop
+        Exit Sub '入力元のプロシージャを確認するために抜ける
+    End If
+
+End Sub
+
+Private Sub CheckArray2DStart1(InputArray, Optional HairetuName$ = "配列")
+'入力2次元配列の開始番号が1かどうかチェックする
+'20210804
+
+    If LBound(InputArray, 1) <> 1 Or LBound(InputArray, 2) <> 1 Then
+        MsgBox (HairetuName & "の開始要素番号は1にしてください")
+        Stop
+        Exit Sub '入力元のプロシージャを確認するために抜ける
+    End If
+
+End Sub
+
