@@ -1,13 +1,12 @@
 Attribute VB_Name = "ModOutputDXFLine"
 Option Explicit
 
-'OutputDXFLine	元場所：FukamiAddins3.ModDXF
-'OutputText	元場所：FukamiAddins3.ModFile
-'Lib入力配列を処理用に変換	元場所：FukamiAddins3.ModFile
-'GetFileName	元場所：FukamiAddins3.ModFile
-'CheckArray2D	元場所：FukamiAddins3.ModArray
-'CheckArray2DStart1	元場所：FukamiAddins3.ModArray
-
+'OutputDXFLine            ・・・元場所：FukamiAddins3.ModDXF  
+'OutputText               ・・・元場所：FukamiAddins3.ModFile 
+'Lib入力配列を処理用に変換・・・元場所：FukamiAddins3.ModFile 
+'GetFileName              ・・・元場所：FukamiAddins3.ModFile 
+'CheckArray2D             ・・・元場所：FukamiAddins3.ModArray
+'CheckArray2DStart1       ・・・元場所：FukamiAddins3.ModArray
 
 '------------------------------
 
@@ -22,7 +21,7 @@ Option Explicit
 '------------------------------
 
 
-Sub OutputDXFLine(InputArray2D, FilePath$)
+Public Sub OutputDXFLine(InputArray2D, FilePath$)
 '二次元配列からDXFファイルを作成する
 
     Call CheckArray2D(InputArray2D)
@@ -94,10 +93,10 @@ Private Sub OutputText(FolderPath$, FileName$, ByVal OutputHairetu, Optional Kug
 '指定配列をtxtで出力する
 '20210721
    
-'FolderPath・・・出力先のフォルダパス
-'FileName・・・出力するファイル名（拡張子はつける）
+'FolderPath   ・・・出力先のフォルダパス
+'FileName     ・・・出力するファイル名（拡張子はつける）
 'OutputHairetu・・・出力する配列
-'KugiriMoji・・・文字列間の区切り文字
+'KugiriMoji   ・・・文字列間の区切り文字
 
     Dim I%, J%, K%, M%, N% '数え上げ用(Integer型)
     
